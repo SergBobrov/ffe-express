@@ -1,0 +1,24 @@
+{
+  "name": "ffe-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ffe",
+    "express",
+    "ssr"
+  ],
+  "author": "Sergg Bobrov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}
