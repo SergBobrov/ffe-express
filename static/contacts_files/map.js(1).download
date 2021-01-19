@@ -1,0 +1,34 @@
+// Google Maps Configuration
+google.maps.visualRefresh = true;
+
+var geocoder;
+var map_east;
+$(function(){
+	var options = {
+		zoom:18,
+		disableDefaultUI: true,
+
+		draggable: true,
+		keyboardShortcuts: false,
+		clickable: false,
+
+		zoomControl: true,
+		zoomControlOptions: {
+			position: google.maps.ControlPosition.LEFT_CENTER,
+			style: google.maps.ZoomControlStyle.LARGE
+		},
+		panControl: false,
+		mapTypeId: 'roadmap'
+	}
+	var options_east = options;
+	var position_east = new google.maps.LatLng(34.050087, -118.253159);
+	options_east.center = position_east;
+
+	map_east = new google.maps.Map(document.getElementById('map-east'), options_east);
+
+	var marker_east = new google.maps.Marker({
+		position: position_east,
+		map: map_east
+	});
+	marker_east.setAnimation(google.maps.Animation.DROP);
+});

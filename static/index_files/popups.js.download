@@ -1,0 +1,23 @@
+$(document).ready(function() {
+	$('#loginModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget);
+		var scope = button.data('scope');
+		var modal = $(this);
+		modal.find('.modal-header h1').text(toUpperFirstChar(scope) + ' login');
+		modal.find('.modal-body input[name="scope"]').val(toUpperFirstChar(scope));
+
+		if (scope == 'client') {
+			modal.find('form.form-horizontal').attr("action", "/clients/login");
+		}
+		
+		//modal.find('.modal-body form').attr('action', '/'+scope+'/login');
+		$('html').addClass('modal-open-html');
+	});
+
+	$('body').on('hidden.bs.modal', '.modal', function () {
+		$('html').removeClass('modal-open-html');
+	});
+	function toUpperFirstChar (string) {
+		return string.charAt(0).toUpperCase() + string.slice(1)
+	}
+})
